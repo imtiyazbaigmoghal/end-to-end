@@ -1,0 +1,4 @@
+git log --one-line
+git config --global user.name "Imtiyaz Baig Moghal"
+git config --global user.email "ImtiyazBaigMoghal@samsclub.com"
+git config user.name
