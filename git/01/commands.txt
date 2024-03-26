@@ -1,4 +1,9 @@
+https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config
+
 git log --one-line
 git config --global user.name "Imtiyaz Baig Moghal"
 git config --global user.email "ImtiyazBaigMoghal@samsclub.com"
 git config user.name
+git add file1 file2 // goes to staging area
+git add . // add all at once .. goes to staging area
+git commit -m "changes" // goes to local .git folder or repo
