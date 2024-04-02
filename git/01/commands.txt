@@ -1,4 +1,5 @@
-https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config
+Git setup and config - https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config
+Generate gitignore - https://www.toptal.com/developers/gitignore/
 
 git log --one-line
 git config --global user.name "Imtiyaz Baig Moghal"
@@ -7,3 +8,13 @@ git config user.name
 git add file1 file2 // goes to staging area
 git add . // add all at once .. goes to staging area
 git commit -m "changes" // goes to local .git folder or repo
+To stage and commit - git commit -a -m "add and commit"
+To view branches - git branch
+To create branch - git checkout -b test
+To switch - git switch test
+To create and switch - git switch -c test
+To delete - go to main branch, from there - git branch -D test-branch
+To rename - Go into the branch, run - git branch -m renamed-test-branch
+how to merge bugfix into master
+git switch master
+git merge bugfix -- by this you will get all commits of bugfix into master
