@@ -18,3 +18,32 @@ To rename - Go into the branch, run - git branch -m renamed-test-branch
 how to merge bugfix into master
 git switch master
 git merge bugfix -- by this you will get all commits of bugfix into master
+
+--
+git diff --> shows unstaged files vs latest commit on head
+git diff --staged --> shows staged files vs latest commit on head
+git diff --HEAD --> shows diff of unstaged+stagedFiles vs latest commit on head
+git diff master..mybranch
+gif diff mybranch..master
+git diff master mybranch
+git diff commit1 commit2
+git diff commit1..commit2
+
+git stash --> copies unstaged+staged files onto stash area and reverts them on the working directory
+git stash pop --> gets most recent stash and applies them back onto the working directory and pops/deletes from stash
+git stash apply --> applies, but stashed files exist so that you can switch branches and apply anywhere
+git stash list --> most recent at top with 0
+git stash apply stash@2 
+git stash drop stash@2 
+git stash clear
+
+---
+obseve what was the state and come back with latest on master
+git checkout 1234567 ---> if you want to observe what was the state at this commit, run this with 7 digit commit id.. HEAD detached from master and points to this commit
+git switch master
+----
+observe what was the state and branch off from it to a new branch
+git checkout 1234567 --> HEAD detaches from current branch and points to this commit directly
+git switch -c new-branch-from-here
+
+

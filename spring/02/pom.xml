@@ -6,7 +6,7 @@
 
     <artifactId>spring-rest-hello-world</artifactId>
     <packaging>jar</packaging>
-    <name>Spring Boot REST API Example</name>
+    <name>Spring Boot REST API Examples</name>
     <version>1.0</version>
 
     <parent>
