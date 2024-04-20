@@ -1,3 +1,8 @@
+WORKING DIRECTORY (GIT DOES NOT TRACK AND INCLUDE FILE FROM HERE)
+|
+STAGING AREA (ANYTHING HERE, GIT TRACKS AND INCLUDES IN THE COMMIT)
+
+
 Git setup and config - https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config
 Generate gitignore - https://www.toptal.com/developers/gitignore/
 
@@ -18,6 +23,8 @@ To rename - Go into the branch, run - git branch -m renamed-test-branch
 how to merge bugfix into master
 git switch master
 git merge bugfix -- by this you will get all commits of bugfix into master
+git branch -v
+
 
 --
 git diff --> shows unstaged files vs latest commit on head
@@ -45,5 +52,30 @@ git switch master
 observe what was the state and branch off from it to a new branch
 git checkout 1234567 --> HEAD detaches from current branch and points to this commit directly
 git switch -c new-branch-from-here
+-----
+FILE BY FILE - To discard your local changes
+git checkout HEAD cat.txt
+git checkout -- cat.txt dog.txt
+git restore dog.txt // Gets most recent commit on HEAD, discards local changes if any
+git restore --source commithash dog.txt // Get specific previous commit, discards local changes if any
+git restore --source HEAD~2 dog.txt // Get specific previous commit, discards local changes if any
+git restore dog.txt // Gets most recent commit on HEAD, discards local changes if any
+
+To unstage files or remove from staging area
+added secret.txt into stage and if you want to unstage
+git restore --stage secrets.txt
+
+--- git reset ---just delete bad commits and go back ----
+You want to go back to a specific commit in the past..
+badcommit2
+badcommit1
+goodcommit3
+goodcommit2
+goodcommit1
+git reset goodcommit3hash --> +MANUALLY DELETE--> so, in working directory you will have bad commits still. It will remove commits from history though, but have those bad commits in working directory
+This is very helpful, if you want to commit these bad commits into a different branch...
+
+git reset --hard goodcommit3hash --> commits gone + those bad commits would be gone from working directory too
+
 
 
