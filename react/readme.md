@@ -14,3 +14,7 @@ How to create component
 2. Have a function with first letter capital
 3. Return a render/html code that can be returned
 4. Export that function
+
+Props:
+1. within the caller component, pass the custom props
+2. Add argument props to the component and access it using {props.}
