@@ -78,4 +78,8 @@ This is very helpful, if you want to commit these bad commits into a different b
 git reset --hard goodcommit3hash --> commits gone + those bad commits would be gone from working directory too
 
 
+-- git revert --> very good feature. It does not delete the commits. It reverts the changes and adds a new commit and history is maintained
+
+
+
 

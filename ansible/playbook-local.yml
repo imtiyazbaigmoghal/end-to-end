@@ -1,0 +1,31 @@
+---
+# This playbook prints a simple debug message
+- name: Echo
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Print debug message
+      debug:
+        msg: Hello, world!
+
+    - name: Download Package
+      get_url:
+        url: "http://oser502349.homeoffice.wal-mart.com:8081/nexus/content/repositories/pangaea_releases/com/walmart/upfront-isp-agent/5.26/upfront-isp-agent-5.26.tar.gz"
+        dest: "/Users/i0m0311/Downloads/test999/upfront-isp-agent.tar.gz"
+        force: yes
+        timeout: 30
+      register: get_url_result
+      until: "'OK' in get_url_result.msg"
+      retries: 10
+      delay: 30
+
+    - name: Print debug message
+      debug:
+        var: get_url_result
+
+    - name: "Unpack Artifact {{ file_name }}"
+      unarchive:
+        src: "/Users/i0m0311/Downloads/test999/upfront-isp-agent.tar.gz"
+        dest: "/Users/i0m0311/Downloads/test999"
+        remote_src: yes
